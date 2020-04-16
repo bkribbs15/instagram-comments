@@ -1,18 +1,15 @@
 import React from 'react';
-import props from 'react';
-import logo from './logo.svg';
 import './App.css';
+import ComingSoon from "react-coming-soon";
 
 function App() {
   return (
-    <div className="shopping-list">
-      <h1>Shopping List for {props.name}</h1>
-      <ul>
-        <li>Instagram</li>
-        <li>WhatsApp</li>
-        <li>Oculus</li>
-      </ul>
-    </div>
+    <ComingSoon
+      image="https://react-coming-soon.maksv.me/default-image.jpeg"
+      bgColor="#fff"
+      textColor="#000"
+      illustration="development"
+    />
   );
 }
 
