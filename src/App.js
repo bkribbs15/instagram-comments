@@ -1,16 +1,35 @@
-import React from 'react';
+import React, {Component} from 'react';
+import Posts from './components/posts';
+import Header from './components/header';
 import './App.css';
-import ComingSoon from "react-coming-soon";
+    class App extends Component {
+      
+      state = {
+        contacts: [{}]
+      }
+      
+      componentDidMount() {
+        fetch('http://jsonplaceholder.typicode.com/users')
+        .then(res => res.json())
+        .then((data) => {
+          this.setState({ contacts: data })
+        })
+        .catch(console.log)
+      }
 
-function App() {
-  return (
-    <ComingSoon
-      image="https://react-coming-soon.maksv.me/default-image.jpeg"
-      bgColor="#fff"
-      textColor="#000"
-      illustration="development"
-    />
-  );
-}
+      render () {
+        return (
+          <div className="App">
+            <div className="App-header">
+              <Header />
+            </div>
+            <div className="posts">
+              <Posts contacts={this.state.contacts} />
+            </div>
+          </div>
+        );
+      }
+    }
+
 
 export default App;

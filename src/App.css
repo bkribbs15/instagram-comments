@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.card-title{
+  font-size: large;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -13,9 +17,13 @@
   }
 }
 
+.posts{
+  text-align: left;
+}
+
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  min-height: 10vh;
   display: flex;
   flex-direction: column;
   align-items: center;
